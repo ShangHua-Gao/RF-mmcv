@@ -150,7 +150,7 @@ class RFSearch(Hook):
         Args:
             model (nn.Module): pytorch model
         """
-        for _, module in model.named_modules():
+        for module in model.modules():
             if isinstance(module, BaseRFSearchOperator):
                 module.estimate()
 
