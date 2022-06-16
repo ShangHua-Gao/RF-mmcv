@@ -114,7 +114,7 @@ class RFSearch(Hook):
                 module.expand()
 
     def search_estimate_only(self, model):
-        for _, module in model.named_modules():
+        for module in model.modules():
             if isinstance(module, BaseRFSearchOperator):
                 module.estimate()
 
